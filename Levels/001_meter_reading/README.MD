@@ -1,4 +1,4 @@
-{
+```
 Id: 001
 Level: 2
 과제목표:수도 계량기 계측기 미터값 읽기
@@ -7,4 +7,4 @@ Level: 2
 다음단계추천:
 획득경험:
 Remarks: Human-Friendly형태로 구성한 이 형태는 간단한 Preprocessing을 통해 Computer-Friendly JSON으로 변환한다.  한줄은 ':'으로 구분되어 ':' 앞부분은 black제거후 Key로, ':' 뒷부분은 Value로 변환한다
-}
+```
