@@ -16,9 +16,18 @@ https://innovationacademy.kr/project#projectx
    - 미션 단위 구성과 각 미션당 풀어야할 기술적 산출물 제시
    - 이 Level을 풀기위해 필요한 역량(Badge)들 제시
    
-2. 공통드랙용 Level (2주짜리)
+2. 공통트랙용 Level (2주짜리)
 ###목적: 역량(Badge)획득과정 
    기업체 프로젝트 (Level)에 기술된 필요역량 단위(Badge)를 획득하는 과정 
+   Badge예시)
+       image badge: 이미지화일에 대한 opencv API call에 익숙하다
+       tesseract badge: google tesseract api call에 익숙하다
+       image categorization data labelling badge: 수만장의 label된 이미지를 training image library로 구성할 수 있다
+       image categorization machine learning badge: Fashion MNIST 형태의 머신러닝 알고리듬을 실행시킬 수 있다.
 
-
-3. 기타
+3. 기타, 이슈들
+###오픈소스로 구성된 Project-X의 Level library 는 두가지로 구성
+    - 학생에게 주는 challenge파트
+        이건 당연히 공개하지만
+    - 멘토들이 참고하거나, 새로운 Level 제작을 위한 참고용 표준 산출물 예제
+        오픈소스라면 얘를 공개해야 하지만, 이걸 공개하면 교육적 목적을 상실하게된다. 즉 공개할 수 없으므로, 오픈소스... *$#^%@%
