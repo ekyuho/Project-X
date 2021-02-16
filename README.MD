@@ -26,6 +26,10 @@ https://innovationacademy.kr/project#projectx
        image categorization machine learning badge: Fashion MNIST 형태의 머신러닝 알고리듬을 실행 가능
        time series data의 prediction badge: 시계열 데이타의 예측을 위한 LSTM 알고리듬을 위한 데이타 구성 가능
        time series data의 anomaly detection badge: LSTM의 prediction을 응용한 anomaly 탐지
+       
+       django badge: django framework 사용가능
+       django/apache badge: django apache2 구성가능
+       
 
 3. 기타, 이슈들
 ###오픈소스로 구성된 Project-X의 Level library 는 두가지로 구성
