@@ -20,6 +20,7 @@ https://innovationacademy.kr/project#projectx
 ### 목적: 역량(Badge)획득과정 
    기업체 프로젝트 (Level)에 기술된 필요역량 단위(Badge)를 획득하는 과정 
    Badge예시)
+````
        image badge: 이미지화일에 대한 opencv API call에 가능
        tesseract badge: google tesseract api call에 가능
        image categorization data labelling badge: 수만장의 label된 이미지를 training image library로 구성 가능
@@ -29,7 +30,7 @@ https://innovationacademy.kr/project#projectx
        
        django badge: django framework 사용가능
        django/apache badge: django apache2 구성가능
-       
+````       
 
 3. 기타, 이슈들
 ### 오픈소스로 구성된 Project-X의 Level library 는 두가지로 구성
