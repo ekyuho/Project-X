@@ -1,10 +1,10 @@
 https://innovationacademy.kr/project#projectx 
-### Men working!
+# Men working!
 
-산출물
-1. 전문트랙용 Level (8주짜리) - 우리가 흔히 말하는 프로젝트형태
-### 목적: 기업체 프로젝트 진행과정 
-#### 2가지 목적
+## 산출물
+### 1. 전문트랙용 Level (8주짜리) - 우리가 흔히 말하는 프로젝트형태
+#### 목적: 기업체 프로젝트 진행과정 
+##### 2가지 목적
    - 기업체의 필요로 하는 인재의 qualification 확인용
    - 기업체가 풀어야 하는 문제에 도전해서 의미있는 성과를 내는 인재 filtering용
    위 2가지 모드 샘플 솔루션 케이스가 주어져야함
@@ -16,7 +16,7 @@ https://innovationacademy.kr/project#projectx
    - 미션 단위 구성과 각 미션당 풀어야할 기술적 산출물 제시
    - 이 Level을 풀기위해 필요한 역량(Badge)들 제시
    
-2. 공통트랙용 Level (2주짜리)
+### 2. 공통트랙용 Level (2주짜리)
 ### 목적: 역량(Badge)획득과정 
    기업체 프로젝트 (Level)에 기술된 필요역량 단위(Badge)를 획득하는 과정 
    Badge예시)
@@ -32,8 +32,8 @@ https://innovationacademy.kr/project#projectx
        django/apache badge: django apache2 구성가능
 ````       
 
-3. 기타, 이슈들
-### 오픈소스로 구성된 Project-X의 Level library 는 두가지로 구성
+### 3. 기타, 이슈들
+#### 오픈소스로 구성된 Project-X의 Level library 는 두가지로 구성
     - 학생에게 주는 challenge파트
         이건 당연히 공개하지만
     - 멘토들이 참고하거나, 새로운 Level 제작을 위한 참고용 표준 산출물 예제
