@@ -8,6 +8,7 @@ IoT 전문회사인 MeasureWare 스타트업에 취업해서 맡은 임무가 �
 
 ## 보유하고 있어야 할 badge
 * I can do "Prediction of Time Series Data"
+
     https://tykimos.github.io/2017/09/09/Time-series_Numerical_Input_Numerical_Prediction_Model_Recipe/ 
 ## 다음단계 Level 추천
 ## 획득 Badge
