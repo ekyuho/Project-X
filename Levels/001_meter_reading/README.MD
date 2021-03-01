@@ -9,6 +9,8 @@ IoT 전문회사인 MeasureWare 스타트업에 취업해서 맡은 임무가 �
 
 * I can do "Fashion MNIST"
 
+    https://www.tensorflow.org/tutorials/keras/classification 
+
 ## 다음단계 Level 추천
 
 ## 획득 Badge
