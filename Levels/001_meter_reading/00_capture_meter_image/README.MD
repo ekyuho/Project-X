@@ -3,9 +3,6 @@
 * 캡처된 이미지를 cloud server로 보낸다.  클라우드서버에는 Flask로 작은 웹서버를 만들어 last image를 받아오는 API를 구현하여 카메라 디바이스와 independent한 구조를 만든다.
 * 미터값 인식 머신러닝 프로그램은 실시간 인식을 위해 HTTP API 콜을 통해 이미지를 취득한다.
 
-## Magic Eco의 Ubuntu 에 이미지 서버 구성
-  로긴정보 제공해주세요
-
-## Web Sensor Info
+## MagicEco WebSensor Info
 * Real time meter reading image
 * http://54.180.106.144:8080/websensor 
