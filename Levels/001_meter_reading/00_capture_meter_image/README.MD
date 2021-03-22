@@ -5,3 +5,7 @@
 
 ## Magic Eco의 Ubuntu 에 이미지 서버 구성
   로긴정보 제공해주세요
+
+## Web Sensor Info
+  Real time meter reading image
+  http://54.180.106.144:8080/websensor 
