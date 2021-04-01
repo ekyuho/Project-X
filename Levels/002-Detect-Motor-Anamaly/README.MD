@@ -1,4 +1,4 @@
-{"type":"label","level":"2", "id":"2","description":"My job is to keep 50 power motors running ok. I need AI to cover this task. "}
+{"type":"level", "id":"2","description":"My job is to keep 50 power motors running ok. I need AI to cover this task. "}
 
 ## 과제목표
 50톤이하 무인운전 소규모 정화설비의 핵심인 배수펌프의 모터 작동 이상여부를 실시간 탐지하는 인공지능 소프트웨어 개발
