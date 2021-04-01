@@ -1,0 +1,5 @@
+.ipyb_checkpoints
+credentials.json
+Images/*.png
+.ipynb_checkpoints/scan-checkpoint.ipynb
+.ipynb_checkpoints/read_google_spreadsheet-checkpoint.ipynb
