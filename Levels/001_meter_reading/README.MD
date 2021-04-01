@@ -1,4 +1,4 @@
-{"type":"label","level":"2", "id":"1","description":"Company would hire me if I'm able to build software system to reconize water meter."}
+{"type":"level","id":"1","description":"Company would hire me if I'm able to build software system to reconize water meter."}
 
 ## 과제목표
 수도 계량기 계측기 미터값 읽기
