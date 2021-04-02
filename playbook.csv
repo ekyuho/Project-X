@@ -1,0 +1,123 @@
+id,subid,description,key,value^M
+10,1,mission-self-evaluation,Subject,미션 포스트모텀 셀프평가 작성^M
+10,2,mission-self-evaluation,From,{ACCOUNT:extract_from_system}^M
+10,3,mission-self-evaluation,레벨,{LEVEL:make_selection_list_from_context}^M
+10,4,mission-self-evaluation,미션,{MISSION:make_selection_list_from_context}^M
+10,5,mission-self-evaluation,레벨과 레벨내 해당 미션정의,{INPUT:user_typing}{INPUT:user_typing}^M
+10,6,mission-self-evaluation,본인이 느꼈던 난이도,"{SELECTION:""5.많이어렵다,4.조금어려운편,3.적당,2.쉬운편,1.아주쉽다""}"^M
+10,7,mission-self-evaluation,기준시간에 대항 평가,"{SELECTION:""3.시간이모자람,2.적절,1.시간이 남음""}"^M
+10,8,mission-self-evaluation,본인기준 본 미션의 적절한 기준 수행일수는?,{SELECTION:INTEGER}^M
+10,9,mission-self-evaluation,"미션 문제해결을 위한 기술전략과 성과, 고유한 방법을 창안했다면 어떤 내용인지 설명",{INPUT:user_typing}^M
+10,10,mission-self-evaluation,산출물코드,{INPUT:user_typing}^M
+10,11,mission-self-evaluation,사용한 기술요소 ,"{{SELECTION:make_selection_list_from_context},{INPUT:user_typing}}"^M
+,,,,^M
+16,1,level-self-evaluation,Subject,미션 포스트모텀 셀프평가 작성^M
+16,2,level-self-evaluation,From,{ACCOUNT:extract_from_system}^M
+16,3,level-self-evaluation,레벨,{LEVEL:make_selection_list_from_context}^M
+16,4,level-self-evaluation,Level전체에 대한 본인이 느꼈던 난이도,"{SELECTION:""5.많이어렵다,4.조금어려운편,3.적당,2.쉬운편,1.아주쉽다""}"^M
+16,5,level-self-evaluation,Level 전체에 대한 기준시간에 대항 평가,"{SELECTION:""3.시간이모자람,2.적절,1.시간이 남음""}"^M
+16,6,level-self-evaluation,본인기준 본 레벨의 적절한 기준 수행일수는?,{SELECTION:INTEGER}^M
+16,7,level-self-evaluation,"레벨전체적으로 문제해결을 위한 기술전략과 성과, 고유한 방법을 창안했다면 어떤 내용인지 설명",{INPUT:user_typing}^M
+16,8,level-self-evaluation,산출물코드,{INPUT:user_typing}^M
+16,9,level-self-evaluation,사용한 기술요소에 대한 자기평가,"{SELECTION:""3.많이 해보아서, 빠른시간에 문제해결가능,2.배워가면서 문제해결에 어려움없음,1.초보로 사용
+해본 수준""}"^M
+16,10,level-self-evaluation,사용한 기술요소 ,"{{SELECTION:make_selection_list_from_context},{INPUT:user_typing}}"^M
+,,,,^M
+11,1,mission-ask-peer-review,{INSERT: {id:10}},^M
+11,2,mission-ask-peer-review,용건메시지,위와같은 미션을 완수하였기에 포스트모텀 세션참여를 요청합니다. 가능한 시간슬롯을 모두 표시해주세요.^M
+11,3,mission-ask-peer-review,날자/시간,{SELECTION:make_selection_list_from_context}^M
+11,4,mission-ask-peer-review,장소,{SELECTION:make_selection_list_from_context}^M
+11,5,mission-ask-peer-review,혹시 세션참여 여건이 어려우면 위 슬롯중 참여 가능한 다른 카데 추천부탁합니다. 추천카데,{SELECTION:make_selection_list_from_context}^M
+11,6,mission-ask-peer-review,사전평가지,{FORM:make_a_form}^M
+11,7,mission-ask-peer-review,To,{SELECTION:make_selection_list_from_context}^M
+11,8,mission-ask-peer-review,Cc,{SELECTION:make_selection_list_from_context}^M
+,,,,^M
+17,1,level-ask-peer-review,{INSERT: {id:16}},^M
+17,2,level-ask-peer-review,용건메시지,위와같은 레벨을 완수하였기에 포스트모텀 세션참여를 요청합니다. 가능한 시간슬롯을 모두 표시해주세요.^M
+17,3,level-ask-peer-review,날자/시간,{SELECTION:make_selection_list_from_context}^M
+17,4,level-ask-peer-review,장소,{SELECTION:make_selection_list_from_context}^M
+17,5,level-ask-peer-review,혹시 세션참여 여건이 어려우면 위 슬롯중 참여 가능한 다른 카데 추천부탁합니다. 추천카데,{SELECTION:make_selection_list_from_context}^M
+17,6,level-ask-peer-review,사전평가지,{FORM:make_a_form}^M
+17,7,level-ask-peer-review,To,{SELECTION:make_selection_list_from_context}^M
+17,8,level-ask-peer-review,Cc,{SELECTION:make_selection_list_from_context}^M
+,,,,^M
+12,1,mission-accept-peer-review,날자/시간,{SELECTION:make_selection_list_from_context}^M
+12,2,mission-accept-peer-review,모듈설명 가독성,"{SELECTION:""Good job,ok I’ll suggest an idea to improve.""}"^M
+12,3,mission-accept-peer-review,코드의 비주얼적 가독성,"{SELECTION:""Good job,ok I’ll suggest an idea to improve.""}"^M
+12,4,mission-accept-peer-review,코드의 시맨틱적 가독성,"{SELECTION:""Good job,ok I’ll suggest an idea to improve.""}"^M
+12,5,mission-accept-peer-review,사용된 기술옵션이 최선인지,"{SELECTION:""I agree,I’ll suggest an other option.""}"^M
+12,6,mission-accept-peer-review,종합적 완성도,"{SELECTION:""3(매우높다인상적이다),2(통상적으로 잘했다),1(미흡하다)""}"^M
+12,7,mission-accept-peer-review,같이 일하고 싶은 정도,"{SELECTION:""3.높다, 2.맟출수 있다, 1.피하고싶다""}"^M
+12,8,mission-accept-peer-review,사용한 기술에 대한 endorsement,{SELECTION:make_selection_list_from_context}^M
+,,,,^M
+18,1,level-accept-peer-review,날자/시간,{SELECTION:make_selection_list_from_context}^M
+18,2,level-accept-peer-review,레벨전체적으로 모듈설명 가독성,"{SELECTION:""Good job,ok I’ll suggest an idea to improve.""}"^M
+18,3,level-accept-peer-review,레벨전체적으로  코드의 비주얼적 가독성,"{SELECTION:""Good job,ok I’ll suggest an idea to improve.""}"^M
+18,4,level-accept-peer-review,레벨전체적으로  코드의 시맨틱적 가독성,"{SELECTION:""Good job,ok I’ll suggest an idea to improve.""}"^M
+18,5,level-accept-peer-review,레벨전체적으로  사용된 기술옵션이 최선인지,"{SELECTION:""I agree,I’ll suggest an other option.""}"^M
+18,6,level-accept-peer-review,레벨전체적으로  종합적 완성도,"{SELECTION:""3.매우높다인상적이다,2.통상적으로 잘했다,1.미흡하다""}"^M
+18,7,level-accept-peer-review,대상 레벨(프로젝트) 결과물의 종합적 사업화가능성,"{SELECTION:""3.높다, 2.잘하면될것 같다, 1.사업화까지는 아니다""}"^M
+18,8,level-accept-peer-review,피평가자의 대상레벨 기술도메인의 종합적 기술역량평가,"{SELECTION:""5.훌륭하다, 4.잘하는 편,3.힘들어하지만 해내는듯,2.억지로 하는것이
+ 보인다,1.이분야 사람이 아닌듯""}
+"^M
+18,9,level-accept-peer-review,같이 일하고 싶은 정도,"{SELECTION:""3.높다, 2.맟출수 있다, 1.피하고싶다""}"^M
+18,10,level-accept-peer-review,사용한 기술에 대한 endorsement,{SELECTION:make_selection_list_from_context}^M
+,,,,^M
+21,1,mission-write-self-peer-review-report,도움이 된 정도,"{SELECTION:""3(매우높다인상적이다),2(통상적으로 좋았다),1(미흡하다)""}"^M
+21,2,mission-write-self-peer-review-report,Best reviewer 및 도움이 된 내용,"{{SELECTION:make_selection_list_from_context},{INPUT:user_typing}{INPUT:user_typing}}"^M
+21,3,mission-write-self-peer-review-report,같이 일하고 싶은 평가자 동료,{SELECTION:make_selection_list_from_context}^M
+21,4,mission-write-self-peer-review-report,사용한 기술에 대한 자기평가,{SELECTION:make_selection_list_from_context}^M
+,5,,,^M
+26,1,level-write-self-peer-review-report,도움이 된 정도,"{SELECTION:""3(매우높다인상적이다),2(통상적으로 좋았다),1(미흡하다)""}"^M
+26,2,level-write-self-peer-review-report,Best peer-reviewer 및 도움이 된 내용,"{{SELECTION:make_selection_list_from_context},{INPUT:user_typing}}"^M
+26,3,level-write-self-peer-review-report,Best mentor-reviewer및 도움이 된 내용,"{{SELECTION:make_selection_list_from_context},{INPUT:user_typing}}"^M
+26,4,level-write-self-peer-review-report,같이 일하고 싶은 평가자 동료,{SELECTION:make_selection_list_from_context}^M
+26,5,level-write-self-peer-review-report,사용한 기술에 대한 endorsement,{SELECTION:make_selection_list_from_context}^M
+,,,,^M
+22,1,mission-write-peer-review-report,{INSERT: {id:12}},^M
+22,2,mission-write-peer-review-report,추가 조언사항,{INPUT:user_typing}^M
+22,3,mission-write-peer-review-report,피평가자의 세선운영관련평가,"{SELECTION:""3.세션을 잘 이끌었음, 2.무난한 진행, 1.아쉬움이 있음""}"^M
+22,4,mission-write-peer-review-report,평가자에게 배움의 기회가 된 정도,"{SELECTION:""3.무언가 배운 포만감,2. 보통,1. 시간이 아까운 느낌""}"^M
+22,5,mission-write-peer-review-report,"피평가자의 질문이해도,질문자의도파악의 정도","{SELECTION:""3.훌륭함,2. 보통,1. 소통에 어려움 느낌""}"^M
+22,6,mission-write-peer-review-report,사용한 기술에 대한 endorsement,{SELECTION:make_selection_list_from_context}^M
+,7,,,^M
+27,1,level-write-peer-review-report,{INSERT: {id:18}},^M
+27,2,level-write-peer-review-report,추가 조언사항,{INPUT:user_typing}^M
+27,3,level-write-peer-review-report,피평가자의 세선운영관련평가,"{SELECTION:""3.세션을 잘 이끌었음, 2.무난한 진행, 1.아쉬움이 있음""}"^M
+27,4,level-write-peer-review-report,평가자에게 배움의 기회가 된 정도,"{SELECTION:""3.무언가 배운 포만감,2. 보통,1. 시간이 아까운 느낌""}"^M
+27,5,level-write-peer-review-report,"피평가자의 질문이해도,질문자의도파악의 정도","{SELECTION:""3.훌륭함,2. 보통,1. 소통에 어려움 느낌""}"^M
+27,6,level-write-peer-review-report,같이 일하고 싶은 정도,"{SELECTION:""3.높다, 2.맟출수 있다, 1.피하고싶다""}"^M
+27,7,level-write-peer-review-report,사용한 기술에 대한 endorsement,{SELECTION:make_selection_list_from_context}^M
+,,,,^M
+29,1,level-write-mentor-review-report,레벨전체적으로 모듈설명 가독성,"{SELECTION:""Good job,ok I’ll suggest an idea to improve.""}"^M
+29,2,level-write-mentor-review-report,레벨전체적으로  코드의 비주얼적 가독성,"{SELECTION:""Good job,ok I’ll suggest an idea to improve.""}"^M
+29,3,level-write-mentor-review-report,레벨전체적으로  코드의 시맨틱적 가독성,"{SELECTION:""Good job,ok I’ll suggest an idea to improve.""}"^M
+29,4,level-write-mentor-review-report,레벨전체적으로  사용된 기술옵션이 최선인지,"{SELECTION:""I agree,I’ll suggest an other option.""}"^M
+29,5,level-write-mentor-review-report,레벨전체적으로  종합적 완성도,"{SELECTION:""3.매우높다인상적이다,2.통상적으로 잘했다,1.미흡하다""}"^M
+29,6,level-write-mentor-review-report,대상 레벨(프로젝트) 결과물의 종합적 사업화가능성,"{SELECTION:""3.높다, 2.잘하면될것 같다, 1.사업화까지는 아니다""}"^M
+29,7,level-write-mentor-review-report,피평가자의 대상레벨 기술도메인의 종합적 기술역량평가,"{SELECTION:""5.훌륭하다, 4.잘하는 편,3.힘들어하지만 해내는듯,2.억지로 하는것이 보인다,1.이분야 사람이 아닌듯""}
+"^M
+29,8,level-write-mentor-review-report,같이 일하고 싶은 정도,"{SELECTION:""3.높다, 2.맟출수 있다, 1.피하고싶다""}"^M
+29,9,level-write-mentor-review-report,매칭 잘될 회사 가상추천,{SELECTION:make_selection_list_from_context}^M
+29,10,level-write-mentor-review-report,사용한 기술에 대한 endorsement,{SELECTION:make_selection_list_from_context}^M
+,,,,^M
+,,,,^M
+101,1,my-dash-board,(자기)동료평가 참여도,76%^M
+101,2,my-dash-board,(타인)동료평가 선호도,35%^M
+101,3,my-dash-board,기술보유지수,95%^M
+101,4,my-dash-board,Front-End.iOS,40%^M
+101,5,my-dash-board,Front-End.Android,13%^M
+101,6,my-dash-board,Front-End.Web,39%^M
+101,7,my-dash-board,Back-End.Windows,90%^M
+101,8,my-dash-board,Back-End.Ubuntu,35%^M
+101,9,my-dash-board,Machine-Learning,25%^M
+101,10,my-dash-board,Program.Python,87%^M
+101,11,my-dash-board,Program.C#,0%^M
+101,12,my-dash-board,Program.C++,10%^M
+101,13,my-dash-board,Program.nodejs,80%^M
+101,14,my-dash-board,Program.Ruby,50%^M
+101,15,my-dash-board,GRIT지수,86%^M
+101,16,my-dash-board,Team지수,60%^M
+101,17,my-dash-board,표현의 명확성지수,89%^M
+101,18,my-dash-board,창업-스타트업취업-대기업취업,24%-87%-65%^M
+
