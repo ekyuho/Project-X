@@ -9,6 +9,22 @@ value="0000.0"
 
 app.use(express.static('public'))
 
+alarm = function(msg) {
+    channel = 'https://hooks.slack.com/services/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'
+    if (typeof msg == 'string' && msg.indexOf('text') < 0) msg = {'text': msg }
+    console.log('channel '+ channel)
+    request.post(
+    {
+        url: channel,
+        headers: {'Content-Type':'application/json'},
+        body: msg,
+        json: true
+    },
+    function (err, httpResponse, body) {
+        if (err) console.log(err, body)
+    });
+}
+
 
 function render() {
     file = fs.readFileSync('meter.html')
@@ -42,6 +58,12 @@ app.get('/meter/:value', function(req, res) {
    console.log(`/meter ${value}`)
    res.redirect('/meter')
 })
+
+app.get('/alarm/:msg', function(req, res) {
+    alarm(req.params.msg)
+    res.end("ok")
+})
+
 
 var server = app.listen(8080, function () {
    var host = server.address().address
