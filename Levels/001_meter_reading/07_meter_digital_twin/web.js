@@ -10,7 +10,7 @@ value="0000.0"
 app.use(express.static('public'))
 
 alarm = function(msg) {
-    channel = 'https://hooks.slack.com/services/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'
+    channel = 'https://hooks.slack.com/services/T017L20056V/your_own_webhook_url'
     if (typeof msg == 'string' && msg.indexOf('text') < 0) msg = {'text': msg }
     console.log('channel '+ channel)
     request.post(
