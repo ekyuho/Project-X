@@ -41,4 +41,4 @@ https://innovationacademy.kr/project#projectx
         오픈소스라면 얘를 공개해야 하지만, 이걸 공개하면 교육적 목적을 상실하게된다. 즉 공개할 수 없으므로, 오픈소스... *$#^%
 
 ### 4. 레벨, 미션수행 및 평가양식
-    http://bit.ly/IA_playbook
+    [http://bit.ly/IA_playbook]
