@@ -36,10 +36,10 @@ https://innovationacademy.kr/project#projectx
 ### 3. 기타, 이슈들
 #### 오픈소스로 구성된 Project-X의 Level library 는 두가지로 구성
     - 학생에게 주는 challenge파트
-        이건 당연히 공개하지만
-    - 멘토들이 참고하거나, 새로운 Level 제작을 위한 참고용 표준 산출물 예제
-        오픈소스라면 얘를 공개해야 하지만, 이걸 공개하면 교육적 목적을 상실하게된다. 즉 공개할 수 없으므로, 오픈소스... *$#^%
+        README.MD 화일로 저장
+    - 멘토들이 참고할 내용 (비공개를 전제)
+        CHEAT_SHEET.MD 화일로 저장
 
-### 4. 레벨, 미션수행 및 평가양식
+### 4. 레벨, 미션수행, 평가 절차 및 평가양식
 
 http://bit.ly/IA_playbook
