@@ -45,3 +45,6 @@ http://bit.ly/webmeter1
 
 * Mission 7: 플랫폼 형태로의 아키텍팅 
   * 실시간 감시, 실시간 자동제어 등의 기능확장에 용이한 아키텍처를 구성한다.
+
+## 참고할 만한 자료 검색을 위한 키워드
+python, ESP32 cam, web cam night vision, mnist, fashion mnist, opencv, numpy shape, numpy ndarray, slack web hookup, python flask, python django
