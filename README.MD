@@ -33,12 +33,15 @@ https://innovationacademy.kr/project#projectx
        django/apache badge: django apache2 구성가능
 ````       
 
-### 3. 기타, 이슈들
+### 3. 디렉토리 화일 구성
 #### 오픈소스로 구성된 Project-X의 Level library 는 두가지로 구성
     - 학생에게 주는 challenge파트
         README.MD 화일로 저장
     - 멘토들이 참고할 내용 (비공개를 전제)
         CHEAT_SHEET.MD 화일로 저장
+
+#### 레벨화일 전체 스캔
+    - scan.py 는 디렉토리 하부의 Level 정의 화일을 scan하여 자동으로 README.MD를 파싱하여 전체 Level에 대한 정의를 메타정보화 시키는 프로그램
 
 ### 4. 레벨, 미션수행, 평가 절차 및 평가양식
 
