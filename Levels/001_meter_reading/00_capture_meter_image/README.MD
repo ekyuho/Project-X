@@ -1,10 +1,6 @@
-## 실시간 미터 이미지 취득
-다음 예시된 옵션들을 고려하여 자신에게 맞는 방법을 선택한다. 빛이 없는 지하공간에 설치된 계량기값을 읽어들이기 위한 방법도 필요하다고 한다.
+## 실시간 미터 이미지 취득 시스템 구축
+* 라즈베리파이를 수도계량기 바로옆에 설치하고 카메라를 부착하여 Edge Computing 과 같은 구성으로 시스템을 구성하는 방법, 또는 카메라로 취득된 이미지를 클라우드 서버로 보내거나, 클라우드 서버에서 카메라 이미지를 원격에서 취득하게 할 수 있는 방법 등 중에서 고려한다.
+* 빛이 없는 지하실에 설치된 수도메터를 읽어야 하는 상황들이 있다.
 
-* Raspberry Pi의 USB카메라를 통해 이미지를 캡처한다. crontab 스케줄링을 통해 이미지를 캡처한다.
-* 캡처된 이미지를 cloud server로 보낸다.  클라우드서버에는 Flask로 작은 웹서버를 만들어 last image를 받아오는 API를 구현하여 카메라 디바이스와 independent한 구조를 만든다.
-* 미터값 인식 머신러닝 프로그램은 실시간 인식을 위해 HTTP API 콜을 통해 이미지를 취득한다.
-
-## MagicEco WebSensor Info
-* Real time meter reading image
-* http://54.180.106.144:8080/websensor 
+## MagicEco Reference WebSensor Info
+* Real time meter reading image:  http://bit.ly/websensor1 
