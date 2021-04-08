@@ -12,10 +12,10 @@ http://bit.ly/websensor1
 
 http://bit.ly/webmeter1
 
-## 보유하고 있어야 할 badge
+## 보유하고 있어야 할 badge (기술요소)
 * Python
 
-## 획득 Badge
+## 획득 Badge (기술요소)
 * OpenCV
 * Flask 혹은 django Web Framework
 * Tensorflow 패션 MNIST 수준의 머신러닝 프로그램
@@ -23,6 +23,9 @@ http://bit.ly/webmeter1
 * Numpy ndarray 
  
 ## List of Missions
+* Mission1: 모니터링 대상 계량기의 미터 이미지 획득단계 구현
+  * 단독으로 작동하는 ESP32 Cam, Raspberry Pi에 USB웹캠을 연결하는 등 여러 옵션들에 대해 검토하고 최선의 방법을 찾는다. 
+  * 혹은, http://bit.ly/websensor1 을 이용해서 먼저 머신러닝부터 시작하는 옵션을 고려한다.
 * Mission1: 숫자가 표시되는 계량기의 숫자표시부의 image를 읽어들여서 읽어들이고자 하는 숫자부분의 이미지를 추출한다. 다음의 과정들을 사용한다.
     1. 회전  2. 광각뷰 보정  3. crop  4. gray scale로 변환, 숫자부문 추출한 이미지 출력.
 * Mission2: Mission1의 이미지를 낱자 단위로 분리하고, 구글 API를 이용하여 문자인식하여 출력한다.
