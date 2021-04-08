@@ -25,7 +25,7 @@ http://bit.ly/webmeter1
 ## List of Missions
 * Mission 1: 모니터링 대상 계량기의 미터 이미지 획득단계 구현
   * 단독으로 작동하는 ESP32 Cam, Raspberry Pi에 USB웹캠을 연결하는 등 여러 옵션들에 대해 검토하고 최선의 방법을 찾는다. 
-  * 혹은, http://bit.ly/websensor1 을 이용해서 먼저 머신러닝부터 시작하는 옵션을 고려한다.
+  * 혹은, http://bit.ly/websensor1 을 이용해서, 이미지 취득 부분을 스킵하고 먼저 머신러닝부터 시작하는 옵션을 고려한다.
   
 * Mission 2: 대상 계량기의 숫자부분 이미지 추출
   * 숫자가 표시되는 계량기의 숫자표시부의 image로부터 인식하고자하는  숫자부분의 이미지를 추출한다.
