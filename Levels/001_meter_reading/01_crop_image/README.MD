@@ -1,4 +1,4 @@
-{"type":"mission","id":"1","description":"crop target area image"}
+{"type":"mission","id":"1","description":"이미지로부터 인식대상 숫자부분을 추출"}
 ## 수도계량기 이미지로부터 인식대상 숫자부분을 추출해낸다.
 ![계량기값](./meter_value.jpg)
 
