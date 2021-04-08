@@ -1,9 +1,10 @@
-{"type":"level","id":"1","description":"Company would hire me if I'm able to build software system to reconize water meter."}
+{"type":"level","id":"1","description":"기존 수도메터, 전기미터의 숫자 표시부를 읽어서 실시간 모니터링 하는 스타트업을 위한 개발 프로젝트"}
 
 ## 과제목표
-수도 계량기 계측기 미터값 읽기
+수도 계량기 숫자 읽어서 웹서버에 실시간 디지탈트윈으로 표시 및 실시간 분석 및 액튜에이션 확장기능 개발
+[![name]](https://www.dsmeters.co.kr/images/menu2/img4_3_1.gif)
 ## 배경
-IoT 전문회사인 MeasureWare 스타트업에 취업해서 맡은 임무가 가정용 수도계량기의 미터값을 읽어들이는 것이다. 메저웨어사는 가스미터, 전기미터등 각종 레거시 계량기들의 실시간 데이터 특정을 기반으로 하는 사업전략을 수립중
+IoT 전문회사인 MeasureWare사의 서비스 기반은 각종 계량기의 미터값을 읽어들이는 것이다. 메저웨어사는 가스미터, 전기미터등 각종 레거시 계량기들의 실시간 데이터 특정을 기반으로 하는 사업전략을 수립중
 
 ## 보유하고 있어야 할 badge
 
