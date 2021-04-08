@@ -23,12 +23,25 @@ http://bit.ly/webmeter1
 * Numpy ndarray 
  
 ## List of Missions
-* Mission1: 모니터링 대상 계량기의 미터 이미지 획득단계 구현
+* Mission 1: 모니터링 대상 계량기의 미터 이미지 획득단계 구현
   * 단독으로 작동하는 ESP32 Cam, Raspberry Pi에 USB웹캠을 연결하는 등 여러 옵션들에 대해 검토하고 최선의 방법을 찾는다. 
   * 혹은, http://bit.ly/websensor1 을 이용해서 먼저 머신러닝부터 시작하는 옵션을 고려한다.
-* Mission1: 숫자가 표시되는 계량기의 숫자표시부의 image를 읽어들여서 읽어들이고자 하는 숫자부분의 이미지를 추출한다. 다음의 과정들을 사용한다.
-    1. 회전  2. 광각뷰 보정  3. crop  4. gray scale로 변환, 숫자부문 추출한 이미지 출력.
-* Mission2: Mission1의 이미지를 낱자 단위로 분리하고, 구글 API를 이용하여 문자인식하여 출력한다.
-* Mission3: 주어진 수도계량이 이미지화일을 다운로드 받아 Tensorflow의 Fashion MNIST 알고리듬을 적용을 위한 Labelled 데이타셋을 만든다.
-* Mission4: Mission 3에서 만든 데이타셋으로 Fashion MNIST 알고리듬을 이용 training을 시키고 숫자인식 시스템을 완성한다.
-* Remarks: Human-Friendly형태로 구성한 이 형태는 간단한 Preprocessing을 통해 Computer-Friendly JSON으로 변환한다.  한줄은 ':'으로 구분되어 ':' 앞부분은 black제거후 Key로, ':' 뒷부분은 Value로 변환한다
+  
+* Mission 2: 대상 계량기의 숫자부분 이미지 추출
+  * 숫자가 표시되는 계량기의 숫자표시부의 image로부터 인식하고자하는  숫자부분의 이미지를 추출한다.
+  
+* Mission 3: 문자인식을 위해 Google, Azure등의 API 사용
+  * 무료 혹은 유료 API를 사용하여 숫자를 인식한다.
+  
+* Mission 4: 수도계량기 숫자인식 머신러닝을 위한 데이타 가공
+  * 수도계량기 이미지화일을 다운로드 받기: https://drive.google.com/file/d/1EihUQdxjdJ6RfFpuV8ay4ZoeQ8_MLDJx/view?usp=sharing 
+
+* Mission 5: 수도계량기 숫자인식 머신러닝 프로그램 만들기
+  * 유사한 문제 해결을 위한 머신러닝 프로그램을 찾아 기반으로 삼는다.
+
+* Mission 6: 인식된 수도계량기 값의 Delivery
+  * 계량기 이미지에 인식된 숫자값을 overlay시켜서 표현하는 digital twin 웹미터기를 구현한다.
+  * 사용자의 스마트폰에 push형태로 전달되는 alarm 기능을 구현한다.
+
+* Mission 7: 플랫폼 형태로의 아키텍팅 
+  * 실시간 감시, 실시간 자동제어 등의 기능확장에 용이한 아키텍처를 구성한다.
