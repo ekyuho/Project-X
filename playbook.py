@@ -111,7 +111,8 @@ def scan():
     google_auth_write.write_playbook(val)
     resp = ""
     for x in val:
-        resp += "%s<br>"%(json.dumps(x))
+        resp += "%s<br>"%(json.dumps(x, ensure_ascii=False))
+    #print(resp)
     return resp
 
 @app.route('/show')

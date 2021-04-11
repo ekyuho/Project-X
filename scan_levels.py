@@ -10,6 +10,7 @@ Mission=[]
 Level= set()
 
 def construct(path, meta):
+    global Level, Mission
     #print(path, meta[:20])
     try:
         j = json.loads(meta)        
@@ -36,6 +37,7 @@ def scan_readme(file):
         construct(file, extract[0])   
 
 def listdir(basepath):
+    global Level, Mission
     #print('a', basepath)
     with os.scandir(basepath) as entries:
         for entry in entries:
@@ -48,6 +50,9 @@ def listdir(basepath):
                 scan_readme(fname)
                 
 def scanit():
+    global Level, Mission
+    Mission=[]
+    Level= set()
     # List all subdirectories using scandir()
     basepath = '.'
     listdir(basepath)
@@ -77,6 +82,7 @@ def scanit():
     val.sort()
     val.insert(0, keys)
     for x in val: del x[0]
+    #print(val)
     return val
 
 if __name__ == '__main__':
