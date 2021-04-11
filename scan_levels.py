@@ -59,16 +59,18 @@ def scanit():
     #print(Level)
     #print(Mission)
 
-    keys = set()
+    allkeys = set()
     for le in Level:
         #print("Level:", le)
         for m in Mission:
             #if m["level"] == le: print(m)
-            keys.update(m.keys())
+            allkeys.update(m.keys())
 
-    keys = list(keys)
-    print(keys)
     keys = ['order', 'type','level', 'id', 'description', 'target']
+    print('before', allkeys)
+    allkeys -= set(keys)
+    print('after', allkeys)
+    for x in allkeys: keys.append(x)
     val = []
     for le in Level:
         for m in Mission:
