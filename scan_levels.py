@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[4]:
-
-
 import os
 import json
 import re
@@ -50,65 +47,38 @@ def listdir(basepath):
             elif str(entry.name).lower() == "readme.md":
                 scan_readme(fname)
                 
-# List all subdirectories using scandir()
-basepath = '.'
-listdir(basepath)
-#print(Level)
-#print(Mission)
+def scanit():
+    # List all subdirectories using scandir()
+    basepath = '.'
+    listdir(basepath)
+    #print(Level)
+    #print(Mission)
 
-keys = set()
-for le in Level:
-    #print("Level:", le)
-    for m in Mission:
-        #if m["level"] == le: print(m)
-        keys.update(m.keys())
+    keys = set()
+    for le in Level:
+        #print("Level:", le)
+        for m in Mission:
+            #if m["level"] == le: print(m)
+            keys.update(m.keys())
 
-keys = list(keys)
-print(keys)
-keys = ['level','type', 'id', 'description', 'target']
-val = [keys]
-for le in Level:
-    for m in Mission:
-        val2 = []
-        if m["level"]==le:
-            for i in range(len(keys)):
-                val2.append(m.get(keys[i],""))
-            val.append(val2)
-google_auth_write.write_playbook(val)
+    keys = list(keys)
+    print(keys)
+    keys = ['order', 'type','level', 'id', 'description', 'target']
+    val = []
+    for le in Level:
+        for m in Mission:
+            val2 = []
+            if m["level"]==le:
+                for i in range(1,len(keys)):
+                    val2.append(m.get(keys[i],""))
+                #print(m.get(keys[2]), m.get(keys[3]))
+                val2.insert(0, "%03d.%02d"%(int(m.get(keys[2])),int(m.get(keys[3]))))
+                val.append(val2)
+    val.sort()
+    val.insert(0, keys)
+    for x in val: del x[0]
+    return val
 
-
-# In[24]:
-
-
-get_ipython().system('dir')
-
-
-# In[8]:
-
-
-Mission
-
-
-# In[89]:
-
-
-b
-
-
-# In[ ]:
-
-
-
-
-
-# In[6]:
-
-
-print(basepath)
-
-
-# In[ ]:
-
-
-
-
+if __name__ == '__main__':
+    val = scanit()
+    google_auth_write.write_playbook(val)

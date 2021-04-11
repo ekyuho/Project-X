@@ -6,9 +6,18 @@
 각 미션수행종료후 평가를 진행할 수 있고, 레벨의 마지막 미션의 평가는 레벨평가목적이다
 <img src=level_mission.jpg>
 <p>
-아래의 양식(폼) 들은 playbook.csv의 내용에 따라 실시간으로 dynamic하게 생성된다.
+아래의 양식(폼) 들은 playbook JSON 정의 화일의  내용에 따라 실시간으로 dynamic하게 생성된다.
+playbook은 JSON형식인데, 약간의 입력 편의도모를 위해 "를 늘 강제하지 않고, 몇가지 MACRO 기능을 가지고 있으며, 자세한 사항은 <a href=https://github.com/ekyuho/Project-X/blob/main/playbook.py>Playbook Parsing 프로그램 </a>으로 직접 확인가능하다. 
+<p>
+<a href=https://docs.google.com/spreadsheets/d/1HRpjR7VKiyH5NrL4f50IM1im6WrFGbs5g-i7tu1fJk0/edit#gid=0>playbook JSON 정의화일</a>(웹페이지 구동시 매번 google에서 읽어들임. 실시간 반영)
 <br>
-<a href=https://github.com/ekyuho/Project-X/blob/main/playbook.csv>Playbook</a>은 기본적으로 JSON형식인데, 약간의 입력 편의도모를 위해 "를 늘 강제하지 않고, 몇가지 MACRO 기능을 가지고 있으며, 자세한 사항은 <a href=https://github.com/ekyuho/Project-X/blob/main/playbook.py>Playbook Parsing 프로그램 </a>으로 직접 확인가능하다. (수정후 web server에서 github pull되면 live 반영)
+<a href=https://github.com/ekyuho/Project-X/blob/main/playbook.py>playbook JSON 파싱프로그램 </a> (web server에서 git pull하면 반영)
+<p>
+<a href=http://54.180.106.144/scan>Provisioning되어있는 레벨들 새로 스캔하기</a> (git pull하여 level화일들을 가지고 있는 서버를 스캔하여, laybook JSON 정의화일의 'levels' 시트를 업데이트함)
+<br>
+<a href=https://docs.google.com/spreadsheets/d/1HRpjR7VKiyH5NrL4f50IM1im6WrFGbs5g-i7tu1fJk0/edit#gid=432501551>업데이트된 Level 정의 JSON 화일보기</a>
+<br>
+<a href=https://github.com/ekyuho/Project-X/blob/main/scan_levels.py>레벨화일 스캔 프로그램 보기</a>
 
 <H3><a href=./show?id=10>1. 미션종료 스스로 평가</a></H3>
 한 레벨을 각 미션에 대해 레벨구성시, 혹은 레벨시작시 멘토들이 각 미션단위로 동료평가여부에 대해 {MUST, OPTIONAL} 마킹을 하여, OPTIONAL인 경우 미션수행자 본인이 가/부를 판단할 수있는 약간의 room을 가진다.<br>
