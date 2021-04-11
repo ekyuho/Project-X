@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 from flask import Flask
 from flask import request
 import re
@@ -14,10 +11,6 @@ app = Flask(__name__, static_url_path='')
 import pandas as pd
 import numpy as np
 book={}
-
-
-# In[2]:
-
 
 def read_playbook():
     global df, book
@@ -73,10 +66,6 @@ def read_playbook():
             if len(items)>4: book[id]["process"][subid] = {"key":items[3], "value":items[4]}
             elif len(items)>3:  book[id]["process"][subid] = {"key":items[3]}
 
-
-# In[3]:
-
-
 def mission2level(id, s):
     #some mapping algoritym
     return "2"
@@ -84,10 +73,6 @@ def mission2level(id, s):
 def account2mission(s):
     #system knows current mission in progress
     return "이미지 cropping"
-
-
-# In[ ]:
-
 
 def render(id, s):
     if s!=s: return s
@@ -140,38 +125,5 @@ def showit():
     print('id=', id, flush=True )
     return show(id)
 
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
-
-
-# In[23]:
-
-
-a=[1,2,3,4,5]
-k=iter(a)
-
-
-# In[24]:
-
-
-k
-
-
-# In[25]:
-
-
-next(k)
-
-
-# In[30]:
-
-
-next(k)
-
-
-# In[ ]:
-
-
-
-
