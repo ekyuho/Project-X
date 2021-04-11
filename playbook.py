@@ -1,27 +1,81 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
 from flask import Flask
 from flask import request
 import re
+import google_auth
+import sys
 app = Flask(__name__, static_url_path='')
 
 import pandas as pd
 import numpy as np
 book={}
 
+
+# In[2]:
+
+
 def read_playbook():
     global df, book
-    book={}
-    df = pd.read_csv('playbook.csv')
-    print('read playbook', flush=True)
-    for no,s in df.iterrows():
-        if not np.isnan(s["id"]):
-            id=str(int(s["id"]))
-            subid=str(int(s["subid"]))
-            print("{} {}".format(id,subid), flush=True)
+    
+    if False and "Use File":
+        book={}
+        df = pd.read_csv('playbook.csv')
+        print('read playbook', flush=True)
+        for no,s in df.iterrows():
+            if not np.isnan(s["id"]):
+                id=str(int(s["id"]))
+                subid=str(int(s["subid"]))
+                print("{} {}".format(id,subid), flush=True)
+                if not id in book: book[id] = {}
+                if not "description" in book[id]:
+                    book[id]["description"] = s["description"]
+                    book[id]["process"] = {}
+                book[id]["process"][subid] = {"key":s["key"], "value":s["value"]}
+    else:
+        table = google_auth.fetch_playbook()
+        index = 0
+        for items in table:
+            # skip commented line
+            if len(items)==0 or items[0]=='#' or (len(items)>2 and items[0]+items[1])=="": continue
+            # confirm that it has right header line
+            if index==0:
+                if items[0]=='id' and items[1]=='subid' and items[2]=='description' and items[3]=='key' and items[4]=='value':
+                    index += 1
+                    continue
+                else:
+                    print("playbook format broken")
+                    print(items)
+                    sys.exit()
+            index += 1
+
+            #print(items)
+            if items[0] != "": id=items[0]
+            if not id.isnumeric():
+                print("id is not numeric: id={}".format(id))
+                print("playbook format broken")
+                sys.exit()
+            subid=items[1]
+            if not subid.isnumeric():
+                print("subid is not numeric: id={}".format(id))
+                print("playbook format broken")
+                sys.exit()               
+
+            #print("{} {}".format(id,subid), flush=True)
             if not id in book: book[id] = {}
             if not "description" in book[id]:
-                book[id]["description"] = s["description"]
+                book[id]["description"] = items[2] if len(items)>3 else ""
                 book[id]["process"] = {}
-            book[id]["process"][subid] = {"key":s["key"], "value":s["value"]}
+            if len(items)>4: book[id]["process"][subid] = {"key":items[3], "value":items[4]}
+            elif len(items)>3:  book[id]["process"][subid] = {"key":items[3]}
+
+
+# In[3]:
+
 
 def mission2level(id, s):
     #some mapping algoritym
@@ -30,6 +84,10 @@ def mission2level(id, s):
 def account2mission(s):
     #system knows current mission in progress
     return "이미지 cropping"
+
+
+# In[ ]:
+
 
 def render(id, s):
     if s!=s: return s
@@ -56,7 +114,7 @@ def show(id):
     global book
     read_playbook()
     if id == "": 
-        with open("playbook.html") as f: s = f.read()
+        with open("playbook.html", encoding='utf-8') as f: s = f.read()
         return s
 
     s = '<H3>process {} {}</H3>'.format(id, book[id]["description"])
@@ -72,7 +130,6 @@ def show(id):
 read_playbook()
 print(book, flush=True)
 
-
 @app.route('/')
 def hello1():
     return "hello"
@@ -86,3 +143,35 @@ def showit():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
+
+
+# In[23]:
+
+
+a=[1,2,3,4,5]
+k=iter(a)
+
+
+# In[24]:
+
+
+k
+
+
+# In[25]:
+
+
+next(k)
+
+
+# In[30]:
+
+
+next(k)
+
+
+# In[ ]:
+
+
+
+

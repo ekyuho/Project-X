@@ -3,3 +3,5 @@ credentials.json
 Images/*.png
 .ipynb_checkpoints/scan-checkpoint.ipynb
 .ipynb_checkpoints/read_google_spreadsheet-checkpoint.ipynb
+digits_image
+meter_image
