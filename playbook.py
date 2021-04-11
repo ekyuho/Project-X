@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import request
 import re
+
 app = Flask(__name__, static_url_path='')
 
 import pandas as pd
@@ -75,7 +76,7 @@ print(book, flush=True)
 
 @app.route('/')
 def hello1():
-    return "hello"
+    return 'your IP is %s'%(request.remote_addr)
 
 @app.route('/show')
 def showit():
