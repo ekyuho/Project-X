@@ -1,4 +1,7 @@
-{"type":"mission","id":"3","description":"get number via calling google tesseract with image"}
-## Reconize digit image by calling Google tesseract
 
-1. figure out to call Google tesseract
+## 질문사항
+### MS Azure와 Google Cloud 문자인식 서비스에 어떤 차이가 있는가?
+    프록그래밍 편의성 면
+    인식의 정확도 면
+
+### 글자 낱자로 인식하는 것과 몇개 글자를 붙여서 인식하는 것이 정확성에서 어떤 차이가 있는가?
