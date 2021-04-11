@@ -92,7 +92,7 @@ def show(id):
     for proc in book[id]["process"]:
         #print(id, book[id]['process'], proc, flush=True)
         b = book[id]["process"][proc]
-        s += '<p> {} {}: {}'.format(proc, b["key"], render(id, b["value"]))
+        s += '<p> {} {}: {}'.format(proc, b.get("key",""), render(id, b.get("value","")))
         print(b, flush=True)
     s += "<p><input type=submit value='제출하기'>"
     print(s, flush=True)
