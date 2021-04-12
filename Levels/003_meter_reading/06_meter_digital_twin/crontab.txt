@@ -21,4 +21,4 @@
 # For more information see the manual pages of crontab(5) and cron(8)
 # 
 # m h  dom mon dow   command
-* * * * * cd ~/Project-X/Levels/003_meter_reading/06_meter_digital_twin; /home/ubuntu/p3/bin/python3 read_meter.py >> Crontab.log
+0 * * * * cd ~/Project-X/Levels/003_meter_reading/06_meter_digital_twin; /home/ubuntu/p3/bin/python3 read_meter.py >> Crontab.log

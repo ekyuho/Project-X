@@ -30,10 +30,6 @@ def doit(number, digit5):
     print('doit',number,',',value, digit5)
 
     if number == value:
-        url = 'http://t.damoa.io:8080/logone?u=60000&s='+ str(s) +'&f=3&i=0W'+str(number)
-        print(url)
-        r = requests.get(url)
-        print(r.text)
         #alarm("same meter reading %d.%s"%(number,digit5), slack)
         print("same meter reading %d.%s"%(number,digit5))
 
@@ -45,10 +41,6 @@ def doit(number, digit5):
         s+=1
     elif number == value+1:
         with open("meter.current", "w") as f: f.write(str(number))
-        url = 'http://t.damoa.io:8080/logone?u=60000&s='+ str(s) +'&f=3&i=0W'+str(number)
-        print(url)
-        r = requests.get(url)
-        print(r.text)
 
         url2 = 'http://54.180.106.144:8080/meter/%d.%s'%(number,digit5[0])
         print(url2)
