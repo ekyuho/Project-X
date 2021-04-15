@@ -1,5 +1,5 @@
 
-{"type":"level","id":"1","description":"수도계량기의 숫자 표시부를 읽어서 실시간 모니터링 하는 사물인터넷 스타트업을 위한 프로젝트","skill-required":"python","skill-acquired":["opencv","flask", "numpy ndarray","remarks":"web 기술을 다루겠으나 그 것이 flask일지 django일지는 학생들의 선택사항이라 skill-acquired에 적시하여 담기에 적절하지 않음"}
+{"type":"level","id":"1","description":"수도계량기의 숫자 표시부를 읽어서 실시간 모니터링 하는 사물인터넷 스타트업을 위한 프로젝트","skill-required":"python","skill-acquired":["opencv","python web framework", "numpy ndarray"}
 
 ## 과제목표
 수도 계량기 숫자 읽어서 웹서버에 실시간 디지탈트윈 기능, 실시간 분석 및 액튜에이션 확장기능 개발
@@ -16,7 +16,7 @@ IoT 전문회사인 MeasureWare사의 기반서비스는 현장에 설치되어 
 
 ## 획득 Badge (기술요소)
 * OpenCV
-* Flask 혹은 django Web Framework
+* Python Web Framework (Flask 혹은 django Web Framework)
 * Tensorflow 패션 MNIST 수준의 머신러닝 프로그램
 * Numpy array shape
 * Numpy ndarray 
