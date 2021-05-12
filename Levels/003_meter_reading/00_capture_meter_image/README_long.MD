@@ -28,7 +28,8 @@ fswebcam -r 1280x720 --font luxisr:24 --title $DATE /home/pi/Pictures/$DATE.jpg
 /usr/bin/python3 upload.py $DATE.jpg
 ```
 
-upload.py는 jpg 이미지를 웹서버로 보내어서 웹주소를 통해 이미지를 가져갈 수 있도록 해주는 징검다리 서버, 일종의 이미지 캐시서버이다. 
+### upload.py
+jpg 이미지를 웹서버로 보내어서 웹주소를 통해 이미지를 가져갈 수 있도록 해주는 징검다리 서버, 일종의 이미지 캐시서버이다. 
 
 ```
 # upload.py
@@ -46,6 +47,7 @@ r = requests.post(url, data=image, headers={'Content-Type': 'application/octet-s
 print(file, r.text)
 ```
 
+### Web server
 다음은 upload.py 의 post 를 받는 node.js/express framework 웹서버 코드의 해당 부분
 ```
 var express = require('express');
@@ -79,5 +81,5 @@ var server = app.listen(8080, function () {
    console.log("listening at http://%s:%s", host, port)
 })
 ```
-## MagicEco Reference WebSensor Info
+## 샘플 URL
 * Real time meter reading image:  http://bit.ly/websensor1 
