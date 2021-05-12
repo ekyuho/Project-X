@@ -23,6 +23,16 @@ img2 = cv2.warpAffine(img, M, (1280, 720))
 
 Affine Transformation은 선의 평행성을 유지하는 이미지 변환작업을 수행한다.
 
+3. 이미지의 4점을 선택하여 이동시킬 좌표를 지정하는 방식으로 Presepective(원근법) 변환을 통해 추출대상 이미지를 최대한 직사각형 형태로 만든다.
+```
+pts1 = np.float32([[138,432],[167,521],[708,407],[709,517]])
+pts2 = np.float32([[140,430],[140,520],[706,430],[706,520]])
+M = cv2.getPerspectiveTransform(pts1, pts2)
+img3 = cv2.warpPerspective(img2, M, (1280, 728))
+```
+![이미지 왜곡보정](./image3.png)
+
+Persepective Transformation은 이미지에 반영된 원근법 효과를 제거하여 대상이미지를 정면에서 바라보는 형태로 만들기위한 목적으로 사용한다.
 
 
 ## 검색을 위한 키워드
