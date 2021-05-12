@@ -81,5 +81,5 @@ var server = app.listen(8080, function () {
    console.log("listening at http://%s:%s", host, port)
 })
 ```
-## 샘플 URL
+## 실시간 작동중인 Web Sensor URL
 * Real time meter reading image:  http://bit.ly/websensor1 
