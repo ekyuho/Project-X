@@ -34,6 +34,13 @@ img3 = cv2.warpPerspective(img2, M, (1280, 728))
 
 Persepective Transformation은 이미지에 반영된 원근법 효과를 제거하여 대상이미지를 정면에서 바라보는 형태로 만들기위한 목적으로 사용한다.
 
+4. 계량기 숫자 부분 추출대상
+```
+img4 = img3[406:536,120:730]
+```
+![이미지 추출](./image4.png)
+
+우선, 숫자부분의 이미지를 추출한다. 정확히 숫자의 경계를 추출하는 것은 추가 프로그램을 통하고, 우선은 문제의 난이도를 줄이기위해 숫자부분에 약간의 테두리를 가진 정도로 범위를 좁힌다. 
 
 ## 검색을 위한 키워드
-opencv
+opencv, imread, warpAffine, warpPersepective
