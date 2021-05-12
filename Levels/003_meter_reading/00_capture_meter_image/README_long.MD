@@ -11,7 +11,7 @@ Raspberry Pi shell 화면에서 crontab -e 명령을 통해 다음과 같이 설
 0 * * * * /home/pi/Pictures/take_picture.sh >> /home/pi/Pictures/take.sh.log
 ```
 
-fswebcam은 USB 카메라에 대한 구동명령어이다. Bus로 연결되는 RPi Camera의 경우는 faspistill 명령을 사용한다.
+fswebcam은 USB 카메라에 대한 구동명령어이다. Bus로 연결되는 RPi Camera의 경우는 raspistill 명령을 사용한다.
 
 ``` 
 # take_picture.sh 의 내용
@@ -28,5 +28,53 @@ fswebcam -r 1280x720 --font luxisr:24 --title $DATE /home/pi/Pictures/$DATE.jpg
 /usr/bin/python3 upload.py $DATE.jpg
 ```
 
+upload.py는 jpg 이미지를 웹서버로 보내어서 웹주소를 통해 이미지를 가져갈 수 있도록 해주는 징검다리 서버, 일종의 이미지 캐시서버이다. 
+
+```
+# upload.py
+import requests
+import sys
+
+if len(sys.argv)<2:
+    print('no file')
+    sys.exit()
+
+url='http://54.180.106.144:8080/websensor'
+file=sys.argv[1]
+with open(file, 'rb')as f: image=f.read()
+r = requests.post(url, data=image, headers={'Content-Type': 'application/octet-stream'})
+print(file, r.text)
+```
+
+다음은 upload.py 의 post 를 받는 node.js/express framework 웹서버 코드의 해당 부분
+```
+var express = require('express');
+var app = express()
+
+app.post('/websensor', function (req, res) {
+    console.log(`got file ${df(new Date(),"yyyy-m-d HH:MM:ss")}`)
+    if (req.body == undefined) {
+        buffer = new Buffer.alloc(0)
+        req.on('data', function(chunk) {
+            buffer = Buffer.concat([buffer, chunk])
+        });
+
+        req.once('end', function() {
+            console.log(`done ${buffer.length}B`)
+            buffer_old = buffer
+            res.end("{X-ACK}")
+            alarm(`new file ${buffer.length}B ${req.connection.remoteAddress.replace(/^.*:/, '')}`)
+        });
+    } else {
+        res.end("{X-NACK}")
+    }
+})
+
+var server = app.listen(8080, function () {
+   var host = server.address().address
+   var port = server.address().port
+   console.log("listening at http://%s:%s", host, port)
+})
+```
 ## MagicEco Reference WebSensor Info
 * Real time meter reading image:  http://bit.ly/websensor1 
