@@ -51,8 +51,14 @@ print(file, r.text)
 var express = require('express');
 var app = express()
 
+var buffer_old = ""
+
+app.get('/websensor', function(req,res) {
+    if (buffer_old == "") res.end("Meter image will be provided within an hour. Please try again later")
+    else res.end(buffer_old)
+})
+
 app.post('/websensor', function (req, res) {
-    console.log(`got file ${df(new Date(),"yyyy-m-d HH:MM:ss")}`)
     if (req.body == undefined) {
         buffer = new Buffer.alloc(0)
         req.on('data', function(chunk) {
@@ -63,11 +69,8 @@ app.post('/websensor', function (req, res) {
             console.log(`done ${buffer.length}B`)
             buffer_old = buffer
             res.end("{X-ACK}")
-            alarm(`new file ${buffer.length}B ${req.connection.remoteAddress.replace(/^.*:/, '')}`)
         });
-    } else {
-        res.end("{X-NACK}")
-    }
+    } else res.end("{X-NACK}")
 })
 
 var server = app.listen(8080, function () {
