@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -7,6 +13,84 @@ import requests
 import sys
 sys.path.append("../01_crop_image")
 from get_clean_image import *
+
+
+# In[2]:
+
+
+if __name__ == "__main__":
+    img = []
+    img.append(url_to_image('http://54.180.106.144:8080/websensor'))
+    img.append(rotate_image(img[0]))
+    img.append(fix_persepective(img[1]))
+    img.append(crop_image(img[2]))
+
+    label = ("original", "rotate", "persepective", "crop")
+    plt.figure(figsize=(15,6))
+    for i in range(4):
+        plt.subplot(2,3,i+1)
+        plt.imshow(img[i])
+        plt.xlabel(label[i])
+    plt.show()
+
+    img4 = img[3]
+    del img
+
+
+# In[3]:
+
+
+if __name__ == "__main__":
+    plt.figure(figsize=(7,1.5))
+    plt.imshow(img4)
+    plt.xlabel("org")
+    plt.show()
+
+    plt.figure(figsize=(15,4))
+    j=1
+    for k in (1,3,5,7):
+        img5 = cv2.blur(img4,(k,k))
+        plt.subplot(2,2,j)
+        plt.imshow(img5)
+        plt.xlabel("average k=%d"%k)
+        j += 1
+    plt.show()
+
+    plt.figure(figsize=(15,4))
+    j = 1
+    for k in (3,5,7,9):
+        img5 = cv2.GaussianBlur(img4,(k,k),0)
+        plt.subplot(2,2,j)
+        plt.imshow(img5)
+        plt.xlabel("gaussian k=%d"%(k))
+        j += 1
+    plt.show()
+
+    plt.figure(figsize=(15,4))
+    j = 1
+    for k in (3,5,7,9):
+        img5 = cv2.medianBlur(img4,k)
+        plt.subplot(2,2,j)
+        plt.imshow(img5)
+        plt.xlabel("median k=%d"%(k))
+        j += 1
+    plt.show()
+
+    plt.figure(figsize=(15,4))
+    j = 1
+    for k in (3,5,7,9):
+        img5 = cv2.bilateralFilter(img4,k,75,75)
+        plt.subplot(2,2,j)
+        plt.imshow(img5)
+        plt.xlabel("bilateral k=%d"%(k))
+        j += 1
+    plt.show()
+
+    img5 = cv2.medianBlur(img4,9)
+
+
+# In[4]:
+
 
 def merge(box1, box2):
     assert is_overlapping_horizontally(box1, box2)
@@ -87,3 +171,25 @@ def to_digit_images(img):
         xs = [image_contours[y:y+h, x:x+w] for (x, y, w, h) in windows]
         xs = [img[y:y+h, x:x+w] for (x, y, w, h) in windows]
         return xs
+
+if __name__ == "__main__":
+    rois = to_digit_images(img5)
+    plt.figure(figsize=(10,2))
+    for i, digit_img in enumerate(rois):
+        rd = ~digit_img
+        plt.subplot(1,5,i+1)
+        plt.imshow(rd)
+    plt.show()
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
