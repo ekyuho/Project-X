@@ -47,7 +47,7 @@ r = requests.post(url, data=image, headers={'Content-Type': 'application/octet-s
 print(file, r.text)
 ```
 
-### Web server
+### web.js - upload.py에 대응하는 Web server
 다음은 upload.py 의 post 를 받는 node.js/express framework 웹서버 코드의 해당 부분
 ```
 var express = require('express');
