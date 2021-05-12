@@ -18,7 +18,7 @@ edge detection 전단계로서 이미지에서 원하지 않는 노이즈 부분
     img5 = cv2.bilateralFilter(img4,k,75,75)
 ```
 
-![블러링 API 결과비교](./image2.png)
+![블러링 API 결과비교](./image2.jpg)
 
 Convolution의 Kernel size에 (3,5,7,9)를 대입하여 얻은 이미치 처리 결과를 비교해본다.
 
