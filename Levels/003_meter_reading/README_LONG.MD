@@ -62,6 +62,8 @@ edge detection 관련한 여러 기술들이 사용하여 계량기의 메터값
   * 숫자는 1씩 일정하게 증가한다.
   * 숫자가 증가하는 대략의 주기가 있다.
 
+### 3. 머신러닝 응용시스템부
+
 인식된 값이 검증이 끝나고나 다음에는 이를 활용하는 시스템을 구동하게된다. 본 과제에서는
 1차적으로 웹화면에 미터의 이미지를 배경으로 인식된 숫자를 오버랩시켜서 표시하는 
 "디지탈 트윈 미터"를 보이는 것을 개발한다. 아래에 구현 결과 예시 링크이다.
@@ -69,15 +71,26 @@ edge detection 관련한 여러 기술들이 사용하여 계량기의 메터값
 ![디지탈트윈 수도계량기](./webmeter2.jpg)
 * 수도계량기 디지탈트윈: http://bit.ly/webmeter1
 
-## 보유하고 있어야 할 badge (기술요소)
-* Python
+디지탈트윈 수도계량기로 기초적 응용사례를 예시했지만, 사업적 가치가 있는 응용 유즈케이스를 예시하면 다음과 같다.
 
-## 획득 Badge (기술요소)
-* OpenCV
+  * 비정상적 메터 증가분 모니터링 및 알람시스템
+  * 비정상 유량 흐름발생 탐지 및 알람시스템
+  * 단위시간별, 계절별, 시간대별, 유량 사용 패턴 분석
+  * 실시간 사용량 표시 (스마트 수도계량기를 통한 물사용 절약관련한 article - https://www.geospatialworld.net/blogs/how-iot-enabled-smart-water-meters-helps-in-water-conservation/ )
+
+## 본 과제를 위해 보유하고 있어야 할 기술요소
+* Python, Numpy Array의 shape에 대한 이해
+* 오픈소스를 다운로드 받고 실행하는데 부담을 느끼지 않는 수준의 소프트웨어 개발 경험
+* "완벽히 이해하지" 못하는 소프트웨어 시스템을 필요한 만큼 이해하고 다룰 수 있는 엔지니어링 센스
+
+## 획득 기술요소
+* 여러 방법이 있겠지만, 보편적으로 사용되는 OpenCV의 기능과  API에 대한 이해와 사용경험
+  * image cropping, persepecitive변경, image distortion처리, edge detection을 위한 blurring 등 기법들
 * Python Web Framework (Flask 혹은 django Web Framework)
+* Numpy array다루기: shape, reshape
+* 머신러닝의 training dataset을 구성하는 방법 - Numpy ndarray 
 * Tensorflow 패션 MNIST 수준의 머신러닝 프로그램
-* Numpy array shape
-* Numpy ndarray 
+* data의 생성부터 데이타의 전처리, 레이블링, 머신러닝 분석, 검증로직구성, 값의 활용 까지의 from A to Z의 전체 사이클 경험
  
 ## List of Missions
 * Mission 1: 모니터링 대상 계량기의 미터 이미지 획득단계 구현
