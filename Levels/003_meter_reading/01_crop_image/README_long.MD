@@ -1,0 +1,27 @@
+{"type":"mission","id":"1","description":"이미지로부터 인식대상 숫자부분을 추출"}
+
+## 수도계량기 이미지로부터 인식대상 숫자부분을 추출해낸다.
+![계량기값](./meter_value.jpg)
+
+이미지를 회전시키고 왜곡을 보정하는 등의 과정 및 인식하고자 하는 부분을 식별해 낸다.
+1. 1단계에서 웹서버에 저장해둔 image를 URL을 통해 가져온다.
+```
+resp = requests.get(url)
+image = np.asarray(bytearray(resp.content), dtype="uint8")
+image = cv2.imdecode(image, cv2.IMREAD_COLOR)
+```
+![이미지 최초상태](./image1.png)
+requests 패키지의 content API는 결과값을 binary로 받을때 사용한다. image format을 IMREAD_COLOR로 지정하여 마치 보통의 칼라 JPG화일을 읽은것과 동일한 상태로 두고 시작한다.
+
+1. 이미지의 원하는 데이타를 수평으로 만들기위해 적절한 중심점과 회전각을 찾아 다음과 같은 방식으로 API을 이용하여 회전시킨다.
+```
+M = cv2.getRotationMatrix2D((130, 400), -27, 1.0)
+img2 = cv2.warpAffine(img, M, (1280, 720))
+```
+![이미지 수평회전](./image2.png)
+Affine Transformation은 선의 평행성을 유지하는 이미지 변환작업을 수행한다.
+
+
+
+## 검색을 위한 키워드
+opencv
