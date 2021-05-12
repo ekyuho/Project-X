@@ -41,9 +41,11 @@ https://innovationacademy.kr/project#projectx
         CHEAT_SHEET.MD 화일로 저장
 
 #### 레벨화일 전체 스캔
-    - scan.py 는 디렉토리 하부의 Level 정의 화일을 scan하여 자동으로 README.MD를 파싱하여 전체 Level에 대한 정의를 JSON형태로 구성하는 프로그램
+    - scan.py 는 디렉토리 하부의 Level 정의 화일을 scan하여 자동으로 README.MD를 파싱하여 전체 Level에 대한 정의를 Google Spreadsheet에 저장
     - Level의 메타정보를 별도로 관리하는 것이 아니라, 해당 Repository내 README.MD 내에 관리하여 데이타의 일관성유지의 편의를 도모한다.
 
+#### Online Playbook JSON정의 (Google Spreadsheet기반으로 이것이 master version)
+    - http://
 ### 4. 레벨, 미션수행, 평가 절차 및 평가양식
 
 http://bit.ly/IA_playbook

@@ -1,4 +1,4 @@
-{"target":"student", "type":"top", "level":"1", "id":"1", "description":"Medical No Show"}
+{"target":"student", "type":"top", "level":"1", "id":"1", "description":"Medical No Show", "mood":"best"}
 
 ## 과제목표
 주어진 No-show 데이터를 분석하고, 모델링하라.
