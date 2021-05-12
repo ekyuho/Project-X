@@ -51,7 +51,7 @@ edge detection 관련한 여러 기술들이 사용하여 계량기의 메터값
 머신러닝 알고리듬은 TensorFlow의 Fashion MNIST 알고리듬에서 image 데이타만을 교체하는 방식이므로,
 기반기술에 대해서 미리 TensorFlow 사이트의 Fashion MNIST (초급 첫번째 신경망)를 학습한다.
 
-![Fashion MNIST](./fashionmnist.jpg)
+![Fashion MNIST](./fashionmnist1.jpg)
 * TensorFlow Fashion MNIST URL: https://www.tensorflow.org/tutorials/keras/classification  
 
 추가로, 간단히 google tesseract API를 통한 문자인식 방법도 사용한다.
