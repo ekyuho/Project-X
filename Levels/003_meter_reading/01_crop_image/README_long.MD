@@ -4,7 +4,8 @@
 ![계량기값](./meter_value.jpg)
 
 이미지를 회전시키고 왜곡을 보정하는 등의 과정 및 인식하고자 하는 부분을 식별해 낸다.
-###1. 첫단계에서 웹서버에 저장해둔 image를 URL을 통해 가져온다.
+
+### 1. 첫단계에서 웹서버에 저장해둔 image를 URL을 통해 가져온다.
 ```
 resp = requests.get(url)
 image = np.asarray(bytearray(resp.content), dtype="uint8")
@@ -14,7 +15,7 @@ image = cv2.imdecode(image, cv2.IMREAD_COLOR)
 
 requests 패키지의 content API는 결과값을 binary로 받을때 사용한다. image format을 IMREAD_COLOR로 지정하여 마치 보통의 칼라 JPG화일을 읽은것과 동일한 상태로 두고 시작한다.
 
-###2. 이미지의 원하는 데이타를 수평으로 만들기위해 적절한 중심점과 회전각을 찾아 다음과 같은 방식으로 API을 이용하여 회전시킨다.
+### 2. 이미지의 원하는 데이타를 수평으로 만들기위해 적절한 중심점과 회전각을 찾아 다음과 같은 방식으로 API을 이용하여 회전시킨다.
 ```
 M = cv2.getRotationMatrix2D((130, 400), -27, 1.0)
 img2 = cv2.warpAffine(img, M, (1280, 720))
@@ -23,7 +24,7 @@ img2 = cv2.warpAffine(img, M, (1280, 720))
 
 Affine Transformation은 선의 평행성을 유지하는 이미지 변환작업을 수행한다.
 
-###3. 이미지의 4점을 선택하여 이동시킬 좌표를 지정하는 방식으로 Presepective(원근법) 변환을 통해 추출대상 이미지를 최대한 직사각형 형태로 만든다.
+### 3. 이미지의 4점을 선택하여 이동시킬 좌표를 지정하는 방식으로 Presepective(원근법) 변환을 통해 추출대상 이미지를 최대한 직사각형 형태로 만든다.
 ```
 pts1 = np.float32([[138,432],[167,521],[708,407],[709,517]])
 pts2 = np.float32([[140,430],[140,520],[706,430],[706,520]])
@@ -34,7 +35,7 @@ img3 = cv2.warpPerspective(img2, M, (1280, 728))
 
 Persepective Transformation은 이미지에 반영된 원근법 효과를 제거하여 대상이미지를 정면에서 바라보는 형태로 만들기위한 목적으로 사용한다.
 
-###4. 계량기 숫자 부분 추출대상
+### 4. 계량기 숫자 부분 추출대상
 ```
 img4 = img3[406:536,120:730]
 ```
