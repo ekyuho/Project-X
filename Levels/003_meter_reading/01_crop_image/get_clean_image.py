@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[7]:
+# In[42]:
 
 
 import cv2
@@ -11,7 +11,7 @@ import pathlib
 import requests
 
 
-# In[8]:
+# In[43]:
 
 
 def url_to_image(url):
@@ -19,13 +19,13 @@ def url_to_image(url):
     # it into OpenCV format
     resp = requests.get(url)
     print(resp.status_code)
-    image = np.asarray(bytearray(resp.content), dtype="uint8")
-    image = cv2.imdecode(image, cv2.COLOR_BGR2GRAY)
-    # return the image
-    return image
+    img = np.asarray(bytearray(resp.content), dtype="uint8")
+    img = cv2.imdecode(img, cv2.IMREAD_COLOR)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    return img
 
 
-# In[9]:
+# In[44]:
 
 
 def rotate_image(img):
@@ -34,7 +34,7 @@ def rotate_image(img):
     return img2
 
 
-# In[10]:
+# In[45]:
 
 
 def fix_persepective(img):
@@ -45,7 +45,7 @@ def fix_persepective(img):
     return img2
 
 
-# In[11]:
+# In[46]:
 
 
 def crop_image(img):
@@ -53,7 +53,7 @@ def crop_image(img):
     return img2
 
 
-# In[12]:
+# In[47]:
 
 
 if __name__ == "__main__":
@@ -71,6 +71,11 @@ if __name__ == "__main__":
         plt.imshow(img[i])
         plt.xlabel(label[i])
     plt.show()
+
+
+# In[ ]:
+
+
 
 
 
