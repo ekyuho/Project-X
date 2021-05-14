@@ -14,4 +14,5 @@ testdata에 대한 예측율이 99.59%로 우수하게 나옴을 알 수 있다.
 총 14,864개의 낱글자에 대해 32개의 인식오류가 발생, 99.8%의 인식율을 보임을 알수있다.
 
 인식오류가 발생한 글자들은 아래 링클에 정리되어있다.
+
 https://github.com/ekyuho/Project-X/blob/main/Levels/003_meter_reading/05_apply_MNIST/wrong.pdf 
