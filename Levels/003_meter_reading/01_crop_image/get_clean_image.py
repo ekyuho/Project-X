@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[42]:
+# In[1]:
 
 
 import cv2
@@ -11,7 +11,7 @@ import pathlib
 import requests
 
 
-# In[43]:
+# In[2]:
 
 
 def url_to_image(url):
@@ -25,7 +25,7 @@ def url_to_image(url):
     return img
 
 
-# In[44]:
+# In[3]:
 
 
 def rotate_image(img):
@@ -34,7 +34,7 @@ def rotate_image(img):
     return img2
 
 
-# In[45]:
+# In[4]:
 
 
 def fix_persepective(img):
@@ -45,15 +45,15 @@ def fix_persepective(img):
     return img2
 
 
-# In[46]:
+# In[5]:
 
 
 def crop_image(img):
-    img2 = img[406:536,120:730]
+    img2 = img[426:556,140:750]
     return img2
 
 
-# In[47]:
+# In[6]:
 
 
 if __name__ == "__main__":
