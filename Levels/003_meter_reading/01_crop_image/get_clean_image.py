@@ -18,7 +18,8 @@ def url_to_image(url):
     # download the image, convert it to a NumPy array, and then read
     # it into OpenCV format
     resp = requests.get(url)
-    print(resp.status_code)
+    if resp.status_code != 200: 
+        print('web status code = ', resp.status_code)
     img = np.asarray(bytearray(resp.content), dtype="uint8")
     img = cv2.imdecode(img, cv2.IMREAD_COLOR)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

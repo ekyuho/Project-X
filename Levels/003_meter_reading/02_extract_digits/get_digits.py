@@ -161,9 +161,11 @@ def to_digit_images(img):
     for box in windows:
         x, y, w, h = box
         img2 = cv2.rectangle(img2, (x, y), (x + w, y + h), (0, 255, 0), 2)
-    plt.figure(figsize=(11,2.1))
-    plt.imshow(img2)
-    plt.show()
+    if __name__ == "__main__":
+        plt.figure(figsize=(11,2.1))
+        plt.imshow(img2)
+        plt.show()
+    
     if len(windows) != 5:
         raise OCRError
         return []
