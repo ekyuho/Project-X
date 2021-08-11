@@ -10,7 +10,7 @@
 ## Download files from the followings
 
 미터 사진 이미지
-https://drive.google.com/file/d/1EihUQdxjdJ6RfFpuV8ay4ZoeQ8_MLDJx/view?usp=sharing
+https://drive.google.com/file/d/1T7FdBm8ri-PCaDmYacxk5VwfC5zf2F_d/view?usp=sharing
 
 한 디지트 추출한 이미지
-https://drive.google.com/file/d/1ohyHAcXUIfFZ_vH6hF6VCOssooh46TJU/view?usp=sharing
+https://drive.google.com/file/d/1WbHNp0XFsBK0kJ8oV_ZzsXWH-0zzROMJ/view?usp=sharing 
