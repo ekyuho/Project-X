@@ -33,7 +33,7 @@ IoT 전문회사인 MeasureWare사의 기반서비스는 현장에 설치되어 
   * 무료 혹은 유료 API를 사용하여 숫자를 인식한다.
   
 * Mission 4: 수도계량기 숫자인식 머신러닝을 위한 데이타 가공
-  * 수도계량기 이미지화일을 다운로드 받기: https://drive.google.com/file/d/1EihUQdxjdJ6RfFpuV8ay4ZoeQ8_MLDJx/view?usp=sharing 
+  * 수도계량기 이미지화일을 다운로드 받기: https://drive.google.com/file/d/1T7FdBm8ri-PCaDmYacxk5VwfC5zf2F_d/view?usp=sharing 
 
 * Mission 5: 수도계량기 숫자인식 머신러닝 프로그램 만들기
   * 유사한 문제 해결을 위한 머신러닝 프로그램을 찾아 기반으로 삼는다.
